@@ -1,4 +1,4 @@
-export * from "./application.extension.js";
-export * from "./client.extension.js";
-export * from "./fetch.extension.js";
+export * from "./application.extension";
+export * from "./client.extension";
+export * from "./fetch.extension";
 export * from "./message.extension";
