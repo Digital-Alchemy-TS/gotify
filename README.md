@@ -1,20 +1,13 @@
-## Description
+# 📨 Welcome to the Gotify Adapter Library
 
-> https://gotify.net/
->
-> Gotify is a simple server for sending & receiving messages
+> [Gotify](https://gotify.net/) is a simple server for sending & receiving messages.
 
-This library acts as a simple set of rest adapters for Gotify. Primary use is for emitting messages from your application
+This library acts as a simple set of REST adapters for Gotify, primarily used for emitting messages from your application.
 
-## Configuration
+## ⚙️ Configuration
 
-- `BASE_URL`
-
-Target server for api
-
-- `CHANNEL_MAPPING`
-
-Map tokens to friendly names to use within the application
+- **`BASE_URL`**: Target server for API.
+- **`CHANNEL_MAPPING`**: Map tokens to friendly names to use within the application.
 
 ```ini
 [gotify.CHANNEL_MAPPING]
@@ -23,21 +16,18 @@ Map tokens to friendly names to use within the application
   app_the_third=token
 ```
 
-- `TOKEN`
+- **`TOKEN`**: Application token.
 
-Application token
+## 🛠 Services
 
-## Services
+- **`application`**
+- **`client`**
+- **`message`**
 
-- `application`
-- `client`
-- `message`
+## 🌐 Multi-channel Type-friendly Messages
 
-## Multi-channel type friendly messages
+> Create a wrapper to send messages from a particular application, using the correct credentials, and quick to type.
 
-> Create a wrapper to send messages from a particular application
->
-> Uses the correct credentials, and quick to type
 ```typescript
 enum MyGotifyApps {
   testing = "testing",
@@ -61,14 +51,14 @@ export function MyGotifyServices({ gotify, config }: TServiceParams) {
 }
 ```
 
-> Send messages
+> Send messages:
 
 ```typescript
-export function MyService({ app, lifecycle }: TServiceParams) {
+export function MyService({ app, lifecycle, internal }: TServiceParams) {
   lifecycle.onReady(async() => {
 
     await app.gotify.reminders({
-      message: `Failed to create countdown timer for ${ZCC.utils.relativeDate(target)}`,
+      message: `Failed to create countdown timer for ${internal.utils.relativeDate(target)}`,
     });
   })
 }
