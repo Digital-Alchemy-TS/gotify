@@ -6,7 +6,7 @@ export function GotifyFetch({
   lifecycle,
   internal,
 }: TServiceParams) {
-  const fetcher = internal.createFetcher({ context });
+  const fetcher = internal.boilerplate.fetch({ context });
 
   lifecycle.onPostConfig(() => {
     fetcher.setBaseUrl(config.gotify.BASE_URL);
