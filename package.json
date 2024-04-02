@@ -2,7 +2,7 @@
   "name": "@digital-alchemy/gotify-extension",
   "repository": "https://github.com/Digital-Alchemy-TS/gotify",
   "homepage": "https://docs.digital-alchemy.app/Gotify",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "scripts": {
     "build": "rm -rf dist/; tsc",
     "lint": "eslint src",

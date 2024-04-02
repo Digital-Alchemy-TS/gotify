@@ -4,11 +4,12 @@ import { Message } from "..";
 
 export function GotifyMessage({ logger, gotify }: TServiceParams) {
   return {
-    async create(body: Message): Promise<Message> {
+    async create({ appid, ...body }: Message): Promise<Message> {
       logger.trace(`message create`);
       return await gotify.fetch({
         body,
         method: "post",
+        params: { token: appid },
         url: "/message",
       });
     },
