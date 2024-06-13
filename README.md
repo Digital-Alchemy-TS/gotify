@@ -1,6 +1,6 @@
 # 📨 Welcome to the Gotify Adapter Library
 
-- [Extended docs](https://docs.digital-alchemy.app/Gotify)
+- [Extended docs](https://docs.digital-alchemy.app)
 - [Discord](https://discord.gg/JkZ35Gv97Y)
 
 This library acts as a simple set of REST adapters for Gotify, primarily used for emitting messages from your application.

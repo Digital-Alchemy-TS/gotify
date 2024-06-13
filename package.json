@@ -2,13 +2,13 @@
   "name": "@digital-alchemy/gotify-extension",
   "repository": "https://github.com/Digital-Alchemy-TS/gotify",
   "homepage": "https://docs.digital-alchemy.app/Gotify",
-  "version": "0.3.4",
+  "version": "24.06.1",
   "scripts": {
     "build": "rm -rf dist/; tsc",
     "lint": "eslint src",
     "prepublishOnly": "npm run build",
     "test": "./scripts/test.sh",
-    "upgrade": "ncu -u; npm i"
+    "upgrade": "ncu -u -f '@digital-alchemy/*'; npm i"
   },
   "author": {
     "url": "https://github.com/zoe-codez",
@@ -25,7 +25,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@digital-alchemy/core": "^0.3.11",
+    "@digital-alchemy/core": "^24.6.1",
     "prom-client": "^15.1.1"
   },
   "devDependencies": {
