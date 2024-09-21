@@ -1,17 +1,12 @@
 import { TServiceParams } from "@digital-alchemy/core";
 
-export function GotifyFetch({
-  context,
-  config,
-  lifecycle,
-  internal,
-}: TServiceParams) {
-  const fetcher = internal.boilerplate.fetch({ context });
+export function GotifyFetch({ context, config, lifecycle, gotify }: TServiceParams) {
+  const fetcher = gotify.internal({ context });
 
   lifecycle.onPostConfig(() => {
-    fetcher.setBaseUrl(config.gotify.BASE_URL);
-    fetcher.setHeaders({ ["X-Gotify-Key"]: config.gotify.TOKEN });
+    fetcher.base_url = config.gotify.BASE_URL;
+    fetcher.base_headers = { ["X-Gotify-Key"]: config.gotify.TOKEN };
   });
 
-  return fetcher.fetch;
+  return fetcher.exec;
 }

@@ -29,10 +29,7 @@ export function GotifyApplication({ logger, gotify }: TServiceParams) {
       });
     },
 
-    async getMessages(
-      id: number,
-      params?: { limit?: number; since?: number },
-    ): Promise<Message[]> {
+    async getMessages(id: number, params?: { limit?: number; since?: number }): Promise<Message[]> {
       logger.trace(`application getMessages`);
       return await gotify.fetch({
         params,
@@ -47,10 +44,7 @@ export function GotifyApplication({ logger, gotify }: TServiceParams) {
       });
     },
 
-    async update(
-      id: number,
-      body: ApplicationParameters,
-    ): Promise<Application> {
+    async update(id: number, body: ApplicationParameters): Promise<Application> {
       logger.trace(`application update`);
       return await gotify.fetch({
         body,

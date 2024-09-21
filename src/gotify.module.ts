@@ -1,6 +1,6 @@
 import { CreateLibrary } from "@digital-alchemy/core";
 
-import { GotifyApplication, GotifyClient, GotifyFetch } from "./extensions";
+import { FetchInternals, GotifyApplication, GotifyClient, GotifyFetch } from "./extensions";
 import { GotifyMessage } from "./extensions";
 
 export const LIB_GOTIFY = CreateLibrary({
@@ -12,8 +12,7 @@ export const LIB_GOTIFY = CreateLibrary({
     },
     CHANNEL_MAPPING: {
       default: {},
-      description:
-        "Mapping of application names to tokens. Keep your keys out of the code!",
+      description: "Mapping of application names to tokens. Keep your keys out of the code!",
       type: "record",
     },
     TOKEN: {
@@ -27,6 +26,7 @@ export const LIB_GOTIFY = CreateLibrary({
     application: GotifyApplication,
     client: GotifyClient,
     fetch: GotifyFetch,
+    internal: FetchInternals,
     message: GotifyMessage,
   },
 });
