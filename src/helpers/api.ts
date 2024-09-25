@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/no-magic-numbers */
-/* eslint-disable sonarjs/cognitive-complexity */
-/* eslint-disable @typescript-eslint/member-ordering */
 
 export enum MessagePriority {
   min = 0,
@@ -95,7 +93,7 @@ export interface Client {
 /**
  * The Error contains error relevant information.
  */
-export interface Error {
+export interface GotifyError {
   /**
    * The general error message
    * @example Unauthorized
